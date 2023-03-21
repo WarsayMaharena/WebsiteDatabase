@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Store</title>
+        <meta name="description" content="This is the description">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style1.css') }}">
+    </head>
+    <body>
+        <header class="main-header">
+            <nav class="main-nav nav">
+                <ul>
+                    <li><a onclick="window.location.href='http://localhost:5000/login';">|Login|</a></li>
+                    <li><a onclick="window.location.href='http://localhost:5000/adminhomepage';">|admin homepage|</a></li>
+                    <li><a onclick="window.location.href='http://localhost:5000/admin';">|Users|</a></li>
+                    <li><a onclick="window.location.href='http://localhost:5000/adminorders';">|admin orders|</a></li>
+                </ul>
+            </nav>
+            <h1 class="band-name band-name-large">Admin OrderPage</h1>
+        </header>
+
+        
+        <section>
+            <h2>Store HELLO</h2>
+            {% for post in posts %}
+            <div>
+                <div>
+                    <strong>TESTING ID:{{ post[0] }}   Name:{{ post[3] }}   Lastname:{{ post[2] }} Status:{{ post[5] }}</strong>
+
+                    <br>
+                    {% for Order in Orders %}
+                    {% if post[0] == Order[0] %}
+                    Price: {{ Order[1] }} <br>
+                    Furniture: {{ Order[2] }} <br>
+                    {% endif %}
+                    {% endfor %}
+
+                </div>
+                <img src="Images/Album 1.png">
+                <div>
+                    <form method="post" action="/adminorders">
+                        <input type = "hidden" name = "Cancelorder" value = "{{ post[0] }}"/>
+                        <button type="submit">Cancel order</button>
+                    </form>
+            </div>
+            {% endfor %}
+        </section>
+    </body>
+</html>

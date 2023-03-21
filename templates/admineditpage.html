@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admin EditPage</title>
+        <meta name="description" content="This is the description">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+        <script
+            src="{{ url_for('static', filename='js/store.js') }}"
+            type="module"
+        ></script>
+    </head>
+    <body>
+        <header class="main-header">
+            <nav class="main-nav nav">
+                <ul>
+                    <li><a onclick="window.location.href='http://localhost:5000/login';">|Login|</a></li>
+                    <li><a onclick="window.location.href='http://localhost:5000/adminhomepage';">|admin homepage|</a></li>
+                    <li><a onclick="window.location.href='http://localhost:5000/admin';">|Users|</a></li>
+                    <li><a onclick="window.location.href='http://localhost:5000/adminorders';">|admin orders|</a></li>
+                </ul>
+            </nav>
+            <h1 class="band-name band-name-large">Edit Page</h1>
+        </header>
+
+        <div class="Comment-container">
+            <span class="title"><h1>Edit {{ posts[0][4]}}</h1></span>
+            <form method="post" action="/admineditpage/{{ posts [0][2] }}">
+                <div>
+                    Furniture
+                    <input type="text" maxlength="16" name="furniture"><br>
+                    Money $ 
+                    <input type="number" min="0" name="price"
+                    onkeypress="return (event.charCode !=8 && event.charCode ==0 || 
+                    (event.charCode >= 48 && event.charCode <= 57))" type="number" value="1"><br>      
+                    
+                    Quantity
+                    <input type="number" min="0" name="quantity"
+                    onkeypress="return (event.charCode !=8 && event.charCode ==0 || 
+                    (event.charCode >= 48 && event.charCode <= 57))" type="number" value="1"><br>  
+                      
+                    <button type="submit">Edit</button>
+                </div>
+            </form>
+            </div>
+    </body>
+</html>

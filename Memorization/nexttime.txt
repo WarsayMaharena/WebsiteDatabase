@@ -1,0 +1,9 @@
+Du jobbade sist på checkout.
+
+Vad du behöver göra är att få funktionen place_order_help att fetcha price och furniture
+från Asset table, detta kan du göra med metoden Fetch-asset med variabeln furnitureID.
+Sedan i HTML TAGGEN ska du läsa om if else block posts. detta för att jämföra OrderID
+i Orders tablet med OrderID i Orders-help tablet. för varje True du får där listindexen
+är lika ska du posta printen, annars ska den ignoreras.
+
+i app.py har ja ändrat i checkout och i userdb.py har jag ändrat i place_order_help, place_order

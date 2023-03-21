@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style1.css') }}">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="contact_bt"><a onclick="window.location.href='http://localhost:5000/';">Back To Homepage</a></div>
+    <form method="post" action="/login">
+    <div class="login-box">
+      <h1>Login</h1>
+      <form method="post" action="/login"></form>
+        <label>Email</label>
+        <input type="email" name="email" placeholder="" />
+        <label>Password</label>
+        <input type="password" name="password" placeholder="" />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+    
+    <p class="para-2">
+      Dont have an account, yet? <button type="button" onclick="window.location.href='http://localhost:5000/createaccount';">Sign Up Here </button>
+    </p>
+  </body>
+</html>

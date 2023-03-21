@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Store</title>
+        <meta name="description" content="This is the description">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style1.css') }}">
+    </head>
+    <body>
+        <header class="main-header">
+            <nav class="main-nav nav">
+                <ul>
+                    <li><a onclick="window.location.href='http://localhost:5000/login';">|Login|</a></li>
+                    <li><a>|Main Store|</a></li>
+                    <li><a onclick="window.location.href='http://localhost:5000/shoppingbasket';">|Shopping Basket|</a></li>
+                </ul>
+            </nav>
+            <h1 class="band-name band-name-large">Homepage</h1>
+        </header>
+        <section>
+            <h2>Store</h2>
+            {% for post in posts %}
+            <div>
+                <form method="post" action="/">
+                <div>
+                    <strong>{{ post[1] }}</strong>
+                    <input type = "hidden" name = "price" value = "{{ post[0] }}"/>
+                    <input type = "hidden" name = "furniture" value = "{{ post[1] }}"/>
+                    <input type = "hidden" name = "furnitureid" value = "{{ post[2] }}"/>
+                    <input type = "hidden" name = "quantity" value = "{{ post[3] }}"/>
+                </div>
+                <img src="Images/Album 1.png">
+                <div>
+                    <span>${{ post[0] }}</span>                    
+                    <button type="submit">ADD TO CART</button>
+                    Wanted Quantity
+                    <input type="number" min="0" name="wantedquantity"
+                    onkeypress="return (event.charCode !=8 && event.charCode ==0 || 
+                    (event.charCode >= 48 && event.charCode <= 57))" type="number" value="1"><br>  
+                </form>
+                <form method="post" action="/">
+                    <input type = "hidden" name = "furnitureid" value = "{{ post[2] }}"/>
+                    <button type="submit" onclick="window.location.href='http://localhost:5000/comments';">comment</button>
+                </form>
+                </div>
+                
+            </div>
+            {% endfor %}
+        </section>
+    </body>
+</html>

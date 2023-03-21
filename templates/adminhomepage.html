@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Commentsection</title>
+        <meta name="description" content="This is the description">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+        <script
+            src="{{ url_for('static', filename='js/store.js') }}"
+            type="module"
+        ></script>
+    </head>
+    <body>
+        <header class="main-header">
+            <nav class="main-nav nav">
+                <ul>
+                    <li><a onclick="window.location.href='http://localhost:5000/login';">|Login|</a></li>
+                    <li><a onclick="window.location.href='http://localhost:5000/admin';">|Users|</a></li>
+                    <li><a onclick="window.location.href='http://localhost:5000/adminorders';">|Orders|</a></li>
+                </ul>
+            </nav>
+            <h1 class="band-name band-name-large">Admin Homepage</h1>
+        </header>
+
+        <div class="new-Comment-container">
+            <span class="title"><h1>Add or delete assets</h1></span>
+            <form method="post" action="/adminhomepage">
+                    <div>
+                        Furniture
+                        <input type="text" maxlength="16" name="furniture"><br>
+                        Money $
+                        <input type="number" min="0" name="price"
+                        onkeypress="return (event.charCode !=8 && event.charCode ==0 || 
+                        (event.charCode >= 48 && event.charCode <= 57))" type="number" value="1"><br>      
+                        
+                        Quantity
+                        <input type="number" min="0" name="quantity"
+                        onkeypress="return (event.charCode !=8 && event.charCode ==0 || 
+                        (event.charCode >= 48 && event.charCode <= 57))" type="number" value="1"><br>  
+                          
+                        <button type="submit">ADD TO Store</button>
+                    </div>
+            </form>
+        </div>
+
+        <h2>Store</h2>
+        {% for post in posts %}
+        <div>
+            <form method="post" action="/adminhomepage">
+            <div>
+                <strong>{{ post[1] }}</strong>
+                <input type = "hidden" name = "price" value = "{{ post[0] }}"/>
+                <input type = "hidden" name = "furniture" value = "{{ post[1] }}"/>
+                <input type = "hidden" name = "furnitureid" value = "{{ post[2] }}"/>
+            </div>
+            <img src="Images/Album 1.png">
+            <div>
+                <span>${{ post[0] }}</span>                    
+                <input type="submit" value="Remove" />
+            </form>
+
+            <form method="post" action="/adminhomepage">
+                <input type = "hidden" name = "furnitureid" value = "{{ post[2] }}"/>
+                <input type = "hidden" name = "Editbutton" value = "EditPage"/>
+                <button type="submit" >Edit</button>
+            </form>
+            
+            <form method="post" action="/adminhomepage">
+                <input type = "hidden" name = "furnitureid" value = "{{ post[2] }}"/>
+            </form>
+            </div>
+            
+        </div>
+        {% endfor %}
+        
+    </body>
+</html>

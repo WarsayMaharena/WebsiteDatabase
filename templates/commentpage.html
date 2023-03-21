@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Commentsection</title>
+        <meta name="description" content="This is the description">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+        <script
+            src="{{ url_for('static', filename='js/store.js') }}"
+            type="module"
+        ></script>
+    </head>
+    <body>
+        <header class="main-header">
+            <nav class="main-nav nav">
+                <ul>
+                    <li><a onclick="window.location.href='http://localhost:5000/login';">|Login|</a></li>
+                    <li><a onclick="window.location.href='http://localhost:5000/homepage';"></a></li>
+                    <li><a onclick="window.location.href='http://localhost:5000/shoppingbasket';">|Shopping Basket|</a></li>
+                </ul>
+            </nav>
+            <h1 class="band-name band-name-large">Comment Section</h1>
+        </header>
+
+        <div class="Comment-container">
+            <span class="title"><h1>Comment</h1></span>
+            <form method="post" action="/comments/{{ posts [0][2] }}">
+                    <div>
+                        <strong>{{ posts[0][4] }}</strong><br>
+                        <img src="Images/Album 1.png"><br>
+                        {{ posts[0][1] }}
+                        <button type="button">ADD TO CART</button><br>
+                        avr grade: {{ posts[0][3] }}
+                        
+                            <div class="comment-and-rating">
+                                <label for="rating">Choose rating:</label>
+                                <input type="number" name="grading" min="0" max="5">
+                                <br>
+                                <label>Add your comment below-</label>
+                                <br>
+                                <input type="text" name="comment" size="35" placeholder="" />
+                                <br>
+                                <button type="submit">Add Comment</button>
+                            </div>
+                    </div>
+            </form>
+            </div>
+            {% for post in comment %}
+            <div class="comment-box">
+                <form method="post" action="/comments">
+                    <hr>
+                    <b>Name: {{ post[5] }} </b><br>
+                    <b>Rating: {{ post[4] }}<b><br>
+                    <b>Comment: {{ post[3] }}
+                    </b>
+                </form>
+            {% endfor %}
+
+
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Store</title>
+        <meta name="description" content="This is the description">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+        <script src="{{url_for('static', filename='js/store.js')}}"></script>
+    </head>
+    <body>
+        <header class="main-header">
+            <nav class="main-nav nav">
+                <ul>
+                    <li><a onclick="window.location.href='http://localhost:5000/login';">|Login|</a></li>
+                    <li><a onclick="window.location.href='http://localhost:5000/';">|Main Store|</a></li>
+                    <li><a onclick="window.location.href='http://localhost:5000/shoppingbasket';">|Shopping Basket|</a></li>
+                </ul>
+            </nav>
+            <h1 class="band-name band-name-large">Purchased</h1>
+        </header>
+        <div class="FinalizedText">
+            Thanks for shopping
+        </div>
+    </body>
+</html>

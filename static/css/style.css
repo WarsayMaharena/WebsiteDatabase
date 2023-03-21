@@ -1,0 +1,383 @@
+* {
+    box-sizing: border-box;
+    font-family: Raleway;
+    color: #777;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+.nav ul {
+    margin: 0;
+}
+
+.nav li {
+    display: inline;
+}
+
+.nav a {
+    display: inline-block;
+    padding: .5em;
+    color: white;
+    text-decoration: none;
+}
+
+.main-nav {
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: lighter;
+    border-bottom: 1px solid rgba(255, 255, 255, .3)
+}
+
+.main-nav li {
+    padding: 0 5%;
+}
+
+.nav a:hover {
+    background-color: rgba(255, 255, 255, .3)
+}
+
+.main-header {
+    background-color: green;
+    
+    background-blend-mode: multiply;
+    background-size: cover;
+    padding-bottom: 30px;
+}
+
+.band-name {
+    text-align: center;
+    margin: 0;
+    font-size: 4em;
+    font-family: "Booter - Zero Zero";
+    font-weight: normal;
+    color: white;
+}
+
+.band-name-large {
+    font-size: 8em;
+}
+
+.content-section {
+    margin: 1em;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5em;
+}
+
+
+.btn {
+    text-align: center;
+    vertical-align: middle;
+    padding: .67em .67em;
+    cursor: pointer;
+    border: none;
+}
+
+
+
+.btn-primary {
+    background-color: green;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-primary a{
+    color: white;
+}
+
+.cart-header {
+    font-weight: bold;
+    font-size: 1.25em;
+    color: #333;
+}
+
+.cart-column {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin-right: 1.5em;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+.cart-row {
+    display: flex;
+}
+
+.cart-item {
+    width: 45%;
+}
+
+.cart-price {
+    width: 20%;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.cart-quantity {
+    width: 35%;
+}
+
+.cart-item-title {
+    color: #333;
+    margin-left: .5em;
+    font-size: 1.2em;
+}
+
+.cart-item-image {
+    width: 75px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.btn-danger {
+    color: white;
+    background-color: #EB5757;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: #CC4C4C;
+}
+
+.cart-quantity-input {
+    height: 34px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid #56CCF2;
+    background-color: #eee;
+    color: #333;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 25px;
+}
+
+.cart-row:last-child {
+    border-bottom: 1px solid black;
+}
+
+.cart-row:last-child .cart-column {
+    border: none;
+}
+
+.cart-total {
+    text-align: end;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.cart-total-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: black;
+    margin-right: 20px;
+}
+
+.cart-total-price {
+    color: #333;
+    font-size: 1.1em;
+}
+
+.btn-purchase {
+    display: block;
+    margin: 40px auto 80px auto;
+    font-size: 1.75em;
+    border:none;
+    Text-decoration: unset;
+
+}
+
+.progression-bar{
+    width: 100%;
+    margin-top: 0px;
+}
+
+.progression-bar ul{
+    margin:auto;
+    padding:0px;
+    text-align:center;
+}
+
+.progression-bar ul li {
+    display: inline-block;
+    border-radius:100%;
+    margin: 20px 30px;
+    height: 100px;
+    
+}
+
+.others-circle {
+    width:100px;
+    height: 100px;
+    background-color: gray;
+    border-radius:100%;
+    display: inline-block;
+    
+}
+
+.first-cirle {
+    background-color: green;
+    width:100px;
+    height: 100px;
+    border-radius:100%;
+    display: inline-block;
+    
+}
+
+
+.progression-bar ul li a{
+    font-size: 50px;
+}
+
+.progression-bar ul li a i{
+    line-height: 100px;
+}
+
+.progression-bar ul li a i span{
+    color: #fff;
+}
+
+.infoStep{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.infoStep ul{
+    margin:auto;
+    padding:0px;
+    text-align:center;
+}
+
+.infoStep ul li {
+    display: inline-block;
+    border-radius:100%;
+    margin: 70px 43px;
+    height: 0px;
+    
+}
+
+.infoStep ul li a{
+    font-size: 20px;
+}
+
+.infoStep ul li a i{
+    line-height: 100px;
+}
+
+.infoStep ul li a i span{
+    color: black;
+}
+
+.Creditcard-container{
+    padding-top:100px;
+    min-height: 5vh;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding-bottom: 10px;
+}
+
+.Creditcard-container .title{
+    font-size:50px;
+    color:black;
+    padding-bottom: 5px;
+}
+
+.Creditcard-container form{
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 10px 15px black;
+    padding: 20px;
+    width: 600;
+}
+
+.Creditcard-container form .Creditcard-inputBox{
+    margin-top: 20px;
+}
+
+.Creditcard-container form .Creditcard-inputBox span{
+   display: block;
+   color: black;
+   padding-bottom: 5px;
+}
+
+.Creditcard-container form .Creditcard-inputBox input{
+    width: 100%;
+    padding:10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    color: darkslategray;
+}
+
+.CCEX{
+    padding-bottom: 90px;
+}
+
+.FinalizedText{
+    padding-top:100px;
+    min-height: 5vh;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding-bottom: 10px;
+    font-size: 100px;
+}
+
+.Comment-container{
+    padding-top:100px;
+    background: white;
+    display: flex;
+    align-items: center;
+    
+    flex-flow: column;
+
+}
+
+.Comment-container form{
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 10px 15px black;
+    padding: 5px;
+    width: 300px;
+    height: 300px
+    }
+
+.comment-and-rating{
+    padding-top: 30px;
+}
+
+.comment-box{
+    padding-top: 10px;
+    min-height: 5vh;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding-bottom: 10px;
+    max-height: max-content;
+}
+
+.comment-box form{
+    background: lightgray;
+    width: 300px;
+    height: 200px;
+    word-wrap: break-word;
+    }

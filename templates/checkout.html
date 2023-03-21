@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Creditcard</title>
+        <meta name="description" content="This is the description">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+        <script
+            src="{{ url_for('static', filename='js/store.js') }}"
+            type="module"
+        ></script>
+    </head>
+    <body>
+        <header class="main-header">
+            <nav class="main-nav nav">
+                <ul>
+                    <li><a href="createaccout.html">|Logout|</a></li>
+                    <li><a href="shoppingbasket.html">|Main Store|</a></li>
+                    <li><a href="checkout.html">|Shopping Basket|</a></li>
+                </ul>
+            </nav>
+            <h1 class="band-name band-name-large">Credentials</h1>
+        </header>
+
+        <div class="infoStep">
+            <ul>
+                <li><a><i class="firstinfoStep"><span>Receipt</span></i></a></li>
+
+                <li><a><i class="othersinfoStep"><span>Credentials</span></i></a></li>
+
+                <li><a><i class="othersinfoStep"><span>Done!</span></i></a></li>
+
+            </ul>
+        </div>
+
+
+        <div class="progression-bar">
+            <ul>
+                <li><a><i class="first-cirle"><span>1</span></i></a></li>
+
+                <li><a><i class="first-cirle"><span>2</span></i></a></li>
+
+                <li><a><i class="others-circle"><span>3</span></i></a></li>
+
+            </ul>
+        </div>
+
+        <div class="Creditcard-container">
+            <span class="title">Creditcard</span>
+            <form method="post" action="/checkout">
+                
+                <div class="Creditcard-inputBox">
+                    <span>card number</span>    
+                    <input type="text" maxlength="16" class="card-number-input" name="card_number">
+                </div>
+                <div class="Creditcard-inputBox">
+                    <span>first name</span>
+                    <input type="text" maxlength="16" class="card-number-input" name="first_name">
+                </div>
+                <div class="Creditcard-inputBox">
+                    <span>last name</span>
+                    <input type="text" maxlength="16" class="card-number-input" name="last_name">
+                </div>
+                <div class="Creditcard-inputBox">
+                    <span>cvc</span>
+                    <input type="text" maxlength="3" class="card-number-input" name="cvc">
+                </div>
+                <div class="Creditcard-inputBox">
+                    <span>month</span>
+                    <input type="text" maxlength="3" class="card-number-input" name="card_month">
+                </div>
+                <div class="Creditcard-inputBox">
+                    <span>year</span>
+                    <input type="text" maxlength="3" class="card-number-input" name="card_year">
+                </div>
+                <div class="Creditcard-inputBox">
+                    <span>City</span>
+                    <input type="text" maxlength="3" class="card-number-input" name="city">
+                </div>
+                <div class="Creditcard-inputBox">
+                    <span>Post number</span>
+                    <input type="text" maxlength="3" class="card-number-input" name="post_code">
+                </div>
+                <button class="btn btn-primary" type="submit">
+                    Purchase
+                </button>
+            </form>
+        </div>
+    </body>
+</html>
